@@ -17,7 +17,7 @@ public class PunchState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(stateInfo.normalizedTime >= 0.5f && Input.GetKeyDown(KeyCode.Z))
-            animator.SetTrigger("Kick"); //I changed "Punched" to "kick" ;)
+            animator.SetTrigger("Punch");
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -26,9 +26,6 @@ public class PunchState : StateMachineBehaviour
         AxelController axelController = animator.gameObject.GetComponent<AxelController>();
         axelController.SetAcceptingInput(true);
     }
-
-    
-       
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -41,7 +38,4 @@ public class PunchState : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
-
-    
-
 }
